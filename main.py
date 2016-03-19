@@ -1,5 +1,5 @@
 from modules import sorting
+from modules.fibo import fibo
 
-list = [2, 5, 56, 1,4 ,313, 4, 5]
-list = sorting.merge_sort(list)
-print(list)
+for i in fibo(10):
+    print(i)
