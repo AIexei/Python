@@ -1,4 +1,4 @@
-from modules import sorting
+from modules.sorting import *
 import time
 
 print("Sorting\n\n")
@@ -48,14 +48,14 @@ print(list)
 
 print("\n\nQuick sort\n")
 time.clock()
-result = sorting.quick_sort(list)
+result = quick_sort(list)
 print("Execution time: %.5f s" % time.clock())
 print(result)
 
 
 print("\n\nMerge sort\n")
 time.clock()
-result = sorting.merge_sort(list)
+result = merge_sort(list)
 print("Execution time: %.5f s" % time.clock())
 print(result)
 

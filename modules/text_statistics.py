@@ -21,6 +21,32 @@ def text_to_list(text):
 def average_count_of_words(list):
     return sum(len(item) for item in list) / len(list)
 
+
 def median_count_of_words(list):
-    list = sorted(list)
-    return 0
+    list = sorted(list, key=lambda item: len(item))
+
+    if len(list) % 2 == 1:
+        mid = int(len(list)/2)
+        return float(len(list[mid]))
+    else:
+        mid = int(len(list)/2)
+        return (len(list[mid]) + len(list[mid-1]))/2
+
+
+def top_grams(list, k=10, n=4):
+    grams = dict()
+
+    for sentence in list:
+        for word in sentence:
+            for nGram in [word[i: i+n] for i in range(len(word) - n + 1)]:
+                if nGram in grams.keys():
+                    grams[nGram] += 1
+                else:
+                    grams.update({nGram: 1})
+
+    sorted_grams = sorted(grams.items(),key=lambda item: item[1], reverse=True)
+
+    if len(sorted_grams) > k:
+        return [temp[0] for temp in sorted_grams[:k]]
+    else:
+        return [temp[0] for temp in sorted_grams]
