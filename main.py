@@ -1,8 +1,8 @@
-from modules import text_statistics
+from modules.unique_items import *
 
-text = input()
-list = text_statistics.text_to_list(text)
-print(list)
-print(text_statistics.median_count_of_words(list))
-print(text_statistics.average_count_of_words(list))
-print(text_statistics.top_grams(list, 10, 2))
+items = UniqueItems()
+
+getattr(items, "add")([1, 4])
+items.list()
+getattr(items, "remove")([1])
+items.list()

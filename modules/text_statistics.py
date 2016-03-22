@@ -18,6 +18,19 @@ def text_to_list(text):
     return result
 
 
+def reps_of_words(list):
+    reps = dict()
+
+    for sentence in list:
+        for word in sentence:
+            if word in reps.keys():
+                reps[word] += 1
+            else:
+                reps.update({word: 1})
+
+    return reps
+
+
 def average_count_of_words(list):
     return sum(len(item) for item in list) / len(list)
 
@@ -47,6 +60,6 @@ def top_grams(list, k=10, n=4):
     sorted_grams = sorted(grams.items(),key=lambda item: item[1], reverse=True)
 
     if len(sorted_grams) > k:
-        return [temp[0] for temp in sorted_grams[:k]]
+        return [temp for temp in sorted_grams[:k]]
     else:
-        return [temp[0] for temp in sorted_grams]
+        return [temp for temp in sorted_grams]

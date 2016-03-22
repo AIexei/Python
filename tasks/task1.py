@@ -1,7 +1,7 @@
 from modules.text_statistics import *
 
 print("Text statistics\n\n")
-list = []
+text = ""
 
 while True:
     print("1) Enter text")
@@ -29,7 +29,36 @@ while True:
             break
         except FileNotFoundError:
             print("File not found\n\n")
-
+    else:
+        print("Incorrect input\n\n")
 
 print()
+list = text_to_list(text)
 
+while True:
+    print("1) How much words is repeated ?")
+    print("2) The average number of words in sentence")
+    print("3) The median number of words in sentence")
+    print("4) Top K most repeated N-grams")
+    print("5) Exit")
+
+    try:
+        user_selection = int(input())
+    except ValueError:
+        print("Incorrect input\n\n")
+        continue
+
+    if user_selection == 1:
+        print(reps_of_words(list))
+    elif user_selection == 2:
+        print(average_count_of_words(list))
+    elif user_selection == 3:
+        print(median_count_of_words(list))
+    elif user_selection == 4:
+        print(top_grams(list, 5, 2))
+    elif user_selection == 5:
+        break
+    else:
+        print("Incorrect input\n\n")
+
+    print("\n\n")
