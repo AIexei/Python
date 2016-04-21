@@ -23,13 +23,11 @@ def console():
         console()
 
 
-
-
 print("Unique items store\n\n")
 
 while True:
-    print("1) Use store")
-    print("2) Exit")
+    print("1. Use store")
+    print("2. Go to menu")
 
     try:
         user_selection = int(input())

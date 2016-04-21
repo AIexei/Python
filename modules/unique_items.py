@@ -6,16 +6,12 @@ class UniqueItems(object):
     def add(self, items=list()):
         if type(items) is list:
             self.store.update(items)
-        else:
-            self.store.add(items)
 
 
     def remove(self, items=list()):
         if type(items) is list:
             for i in items:
                 self.store.remove(i)
-        else:
-            self.store.remove(items)
 
 
     def find(self, items=list()):
@@ -27,11 +23,6 @@ class UniqueItems(object):
                     flag = False
 
             print(flag)
-        else:
-            if items in self.store:
-                print("True")
-            else:
-                print("False")
 
 
     def clear(self, waste=list()):
@@ -48,7 +39,8 @@ class UniqueItems(object):
                 for line in file:
                     for i in line.split(" "):
                         if i != "":
-                            self.add(i)
+                            self.add([int(i)])
+
             print("Store loaded")
         except FileNotFoundError:
             print("File not found")

@@ -4,8 +4,8 @@ print("Generator of Fibonacci numbers\n\n")
 number = 0
 
 while True:
-    print("1) Enter number")
-    print("2) Open from file")
+    print("1. Enter number")
+    print("2. Open from file")
 
     try:
         user_selection = int(input())

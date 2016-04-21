@@ -4,8 +4,8 @@ print("Text statistics\n\n")
 text = ""
 
 while True:
-    print("1) Enter text")
-    print("2) Open from file")
+    print("1. Enter text")
+    print("2. Open from file")
 
     try:
         user_selection = int(input())
@@ -55,10 +55,22 @@ while True:
     elif user_selection == 3:
         print(median_count_of_words(list))
     elif user_selection == 4:
-        print(top_grams(list, 5, 2))
+        k = 0
+        n = 0
+        while True:
+            try:
+                print("Enter K, N:")
+                k = int(input())
+                n = int(input())
+                break
+            except ValueError:
+                print("Incorrect input\n\n")
+                continue
+
+        print(top_grams(list, k, n))
     elif user_selection == 5:
         break
     else:
         print("Incorrect input\n\n")
 
-    print("\n\n")
+    print("\n")

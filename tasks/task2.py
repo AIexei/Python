@@ -5,8 +5,8 @@ print("Sorting\n\n")
 list = []
 
 while True:
-    print("1) Enter array")
-    print("2) Open from file")
+    print("1. Enter array")
+    print("2. Open from file")
 
     try:
         user_selection = int(input())
