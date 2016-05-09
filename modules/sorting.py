@@ -1,3 +1,20 @@
+import math
+
+def radix_sort(array):
+    base = 10
+    max_len = len(str(max(array)))
+
+    for x in range(max_len):
+        bins = [[] for i in range(base)]
+        for y in array:
+            bins[int(y / 10**x) % base].append(y)
+
+        array = []
+        for section in bins:
+            array.extend(section)
+    return array
+
+
 def quick_sort(array):
     less = []
     pivotList = []

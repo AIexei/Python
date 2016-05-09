@@ -11,7 +11,8 @@ class UniqueItems(object):
     def remove(self, items=list()):
         if type(items) is list:
             for i in items:
-                self.store.remove(i)
+                if i in self.store:
+                    self.store.remove(i)
 
 
     def find(self, items=list()):
